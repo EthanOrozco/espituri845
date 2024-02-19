@@ -27,7 +27,7 @@ async def on_message1(message):
 
 @client.event
 async def on_message2(message):
-    if message.author == cliente.user:
+    if message.author == client.user:
         return
     
     if message.content.startswith('$ping'):
