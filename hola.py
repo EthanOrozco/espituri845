@@ -5,8 +5,6 @@ import urllib.request
 import json
 
 load_dotenv()
-TOKEN = os.getenv("")
-
 bot = commands.Bot(command_prefix="-")
 
 """
@@ -18,3 +16,32 @@ async def xxxxx ()"""
 @bot.command(name="ping")
 async def ping(ctx):
     await ctx.send("pong")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+with open('token.txt') as f:
+    TOKEN = f.readline()
+
+bot.run(TOKEN)
