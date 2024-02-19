@@ -1,13 +1,20 @@
-import os
-from discord.ext import commands
-from dotenv import load_dotenv
-import urllib.request
-import json
+import discord
 
-load_dotenv()
-TOKEN = os.getenv("OTQyMjc4NTk2NDEwNjM4Mzc2.GR1iPj.GSddEA0JrLUa_uiP4-yhPzPwwrHI1eIuL_Gyjw")
+intents = discord.Intents.default()
+intents.message_content = True
 
-bot = commands.Bot(command_prefix="-")
+client = discord.Client(intents=intents)
 
-"""@bot.command(name="xxxxxx")
-async def xxxxx ()"""
+@client.event
+async def on_ready():
+    print(f'We have logged in as {client.user}')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
+
+client.run('OTQyMjc4NTk2NDEwNjM4Mzc2.G42NFz.a3jVS2iXuGDcNReBF8aHT8pcHs-bIeu8iwLorU')
