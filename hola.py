@@ -16,8 +16,17 @@ async def on_message(message):
 
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
+
 with open('token.txt') as f:
     TOKEN = f.readline()
+
+@client.event
+async def on_message(message):
+    if message.author ==client.user:
+        return
+    
+    if message.content.startswith('$axel'):
+        await message.channel.send('https://cdn.discordapp.com/attachments/1046647124655345706/1127798411790401608/SPOILER_67e1f5e72fb3ec6b98be0794e601d472.mp4?ex=65e53b1e&is=65d2c61e&hm=e6e4acf7509f7a23c8a8be57b7ba755e1afeb8e5f1ced3f3c6e597c4dae4eacf&')
 
 client.run(TOKEN)
 
