@@ -9,5 +9,12 @@ TOKEN = os.getenv("")
 
 bot = commands.Bot(command_prefix="-")
 
-"""@bot.command(name="xxxxxx")
+"""
+TEMPLATE
+
+@bot.command(name="xxxxxx")
 async def xxxxx ()"""
+
+@bot.command(name="ping")
+async def ping(ctx):
+    await ctx.send("pong")
