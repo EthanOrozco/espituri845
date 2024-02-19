@@ -1,8 +1,4 @@
-import os
-from discord import *
-from dotenv import load_dotenv
-import urllib.request
-import json
+import discord
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -20,7 +16,6 @@ async def on_message(message):
 
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
-
 with open('token.txt') as f:
     TOKEN = f.readline()
 
